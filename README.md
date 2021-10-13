@@ -10,7 +10,7 @@ These instructions will get you building and running the project on your local m
 
 - Apache Maven v3+
 - JDK 1.8+
-- Hadoop3+
+- Hadoop v3+
 
 ## Building
 
