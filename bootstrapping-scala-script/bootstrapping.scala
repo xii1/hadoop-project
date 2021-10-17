@@ -1,5 +1,5 @@
-val FILENAME = "mtcars.csv";
-val N_TIMES = 500;
+val FILENAME = "speed_gender_height.csv";
+val N_TIMES = 1000;
 val PERCENTAGE = 0.25;
 
 
@@ -19,7 +19,7 @@ data.show();
 
 // Step 2: Create key-value pair RDD for a categorical variable and a numeric variable
 println("----- %s -----".format("Create key-value pair RDD for a categorical variable and a numeric variable"))
-val p = data.select("cyl", "mpg").rdd.map(r => (r.getString(0), r.getString(1).toDouble)).cache();
+val p = data.select("gender", "height").rdd.filter(r => !r.getString(1).equalsIgnoreCase("NA")).map(r => (r.getString(0), r.getString(1).toDouble)).cache();
 p.count();
 
 
