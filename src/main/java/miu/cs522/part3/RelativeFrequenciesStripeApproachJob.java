@@ -10,7 +10,7 @@ import java.io.IOException;
  * @author XIII
  */
 public class RelativeFrequenciesStripeApproachJob
-        extends MapReduceJob<RelativeFrequenciesStripeApproachMapper, RelativeFrequenciesStripeApproachReducer, Text, MapWritable> {
+        extends MapReduceJob<RelativeFrequenciesStripeApproachMapper, RelativeFrequenciesStripeApproachReducer> {
 
     public RelativeFrequenciesStripeApproachJob() throws IOException {
         super("Relative Frequencies Job using Stripe Approach",

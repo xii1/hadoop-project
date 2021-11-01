@@ -6,7 +6,7 @@ import org.apache.hadoop.io.Text;
 
 import java.io.IOException;
 
-public class IMCWordCountJob extends MapReduceJob<IMCWordCountMapper, WordCountReducer, Text, IntWritable> {
+public class IMCWordCountJob extends MapReduceJob<IMCWordCountMapper, WordCountReducer> {
 
     public IMCWordCountJob() throws IOException {
         super("Word Count Job with In-Mapper Combining",

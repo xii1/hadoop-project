@@ -15,19 +15,28 @@ import java.io.IOException;
 /**
  * @author XIII
  */
-public class MapReduceJob<M extends Mapper, R extends Reducer, K, V> extends Configured implements Tool {
+public class MapReduceJob<M extends Mapper, R extends Reducer> extends Configured implements Tool {
 
     protected Job job;
 
-    public MapReduceJob(String jobName, Class<M> mapperClass, Class<R> reducerClass,
+    public <K, V> MapReduceJob(String jobName, Class<M> mapperClass, Class<R> reducerClass,
                         Class<K> mapOutputKeyClass, Class<V> mapOutputValueClass) throws IOException {
+        initJob(jobName, mapperClass, reducerClass);
+
+        job.setMapOutputKeyClass(mapOutputKeyClass);
+        job.setMapOutputValueClass(mapOutputValueClass);
+    }
+
+    public MapReduceJob(String jobName, Class<M> mapperClass, Class<R> reducerClass) throws IOException {
+        initJob(jobName, mapperClass, reducerClass);
+    }
+
+    private void initJob(String jobName, Class<M> mapperClass, Class<R> reducerClass) throws IOException {
         final Configuration conf = new Configuration();
         job = Job.getInstance(conf, jobName);
         job.setJarByClass(this.getClass());
         job.setMapperClass(mapperClass);
         job.setReducerClass(reducerClass);
-        job.setMapOutputKeyClass(mapOutputKeyClass);
-        job.setMapOutputValueClass(mapOutputValueClass);
     }
 
     @Override

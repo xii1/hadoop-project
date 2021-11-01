@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * @author XIII
  */
-public class IMCAvgBytesSentJob extends MapReduceJob<IMCAvgBytesSentMapper, IMCAvgBytesSentReducer, Text, LogWritable> {
+public class IMCAvgBytesSentJob extends MapReduceJob<IMCAvgBytesSentMapper, IMCAvgBytesSentReducer> {
 
     public IMCAvgBytesSentJob() throws IOException {
         super("Average Computation Job for Bytes Sent with In-Mapper Combining",

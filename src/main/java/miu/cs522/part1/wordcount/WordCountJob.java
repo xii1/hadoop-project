@@ -6,7 +6,7 @@ import org.apache.hadoop.io.Text;
 
 import java.io.IOException;
 
-public class WordCountJob extends MapReduceJob<WordCountMapper, WordCountReducer, Text, IntWritable> {
+public class WordCountJob extends MapReduceJob<WordCountMapper, WordCountReducer> {
 
     public WordCountJob() throws IOException {
         super("Word Count Job", WordCountMapper.class, WordCountReducer.class, Text.class, IntWritable.class);

@@ -9,7 +9,7 @@ import java.io.IOException;
  * @author XIII
  */
 public class RelativeFrequenciesPairApproachJob
-        extends MapReduceJob<RelativeFrequenciesPairApproachMapper, RelativeFrequenciesPairApproachReducer, PairItem, IntWritable> {
+        extends MapReduceJob<RelativeFrequenciesPairApproachMapper, RelativeFrequenciesPairApproachReducer> {
 
     public RelativeFrequenciesPairApproachJob() throws IOException {
         super("Relative Frequencies Job using Pair Approach",

@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * @author XIII
  */
-public class AvgBytesSentJob extends MapReduceJob<AvgBytesSentMapper, AvgBytesSentReducer, Text, IntWritable> {
+public class AvgBytesSentJob extends MapReduceJob<AvgBytesSentMapper, AvgBytesSentReducer> {
 
     public AvgBytesSentJob() throws IOException {
         super("Average Computation Job for Bytes Sent", AvgBytesSentMapper.class, AvgBytesSentReducer.class,
